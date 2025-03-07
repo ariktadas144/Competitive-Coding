@@ -58,6 +58,14 @@ This program implements a doubly linked list with the following functionalities:
 
 The doubly linked list is implemented using nodes that store data and pointers to the previous and next nodes. Insertion and traversal operations are implemented by manipulating these pointers.
 
+### Time and Space Complexity
+
+* **insertAtHead(int data):** O(1) time complexity (constant time).
+* **insertAtTail(int data):** O(1) time complexity.
+* **printForward():** O(n) time complexity, where n is the number of nodes in the list.
+* **printBackward():** O(n) time complexity.
+* **Space Complexity:** O(n), where n is the number of nodes in the list. This is because each node stores data and pointers to the previous and next nodes.
+
 ## Level 1 Task: Custom Data Structure Implementation
 
 ### Description
@@ -100,6 +108,14 @@ The implementation uses arrays to simulate stacks for the main stack, min stack,
 
 The approach uses auxiliary stacks (`minStack` and `maxStack`) to store the minimum and maximum elements seen so far. This ensures that `getMin()` and `getMax()` can be done in O(1) time.
 
+### Time and Space Complexity
+
+* **
+* **top():** O(1) time complexity.
+* **getMin():** O(1) time complexity.
+* **getMax():** O(1) time complexity.
+* **Space Complexity:** O(n), where n is the number of elements in the main stack. This is because we use three stacks, each with a maximum size of n.
+
 ## Level 2 Task: Composite Data Structure Implementation
 
 ### Description
@@ -141,3 +157,9 @@ The implementation uses arrays to store and manipulate the intervals.
 1.  **Sorting:** Uses insertion sort to sort intervals by their start values.
 2.  **Merging:** Iterates through the sorted intervals, merging overlapping intervals into a single interval.
 3.  **Array Storage:** Implements the interval collection using an array.
+
+### Time and Space Complexity
+
+* **addInterval(start, end):** O(n^2) worst case Time complexity. O(n log n) average case because of sorting with an array. In this specific case, insertion sort is used, adding the worst case complexity. Merging the intervals is O(n).
+* **getIntervals():** O(n) time complexity.
+* **Space Complexity:** O(n), where n is the maximum number of intervals that the array can hold. We use an array to hold the intervals. Also during the merge function, a temporary array is used that could also be of size n, so it maintains O(n) space complexity.
